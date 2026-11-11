@@ -114,85 +114,66 @@ if(product.category === "drink"){
 if(product.category === "drink"){
 
     extraSection.innerHTML = `
+        <h3>Sugar Level</h3>
 
-    <h3>Sugar Level</h3>
+        <label>
+            <input type="radio" name="sugar" value="0%">
+            No Sugar
+        </label>
 
-    <label>
-        <input
-        type="radio"
-        name="sugar"
-        value="0%">
-        No Sugar
-    </label>
+        <label>
+            <input type="radio" name="sugar" value="25%">
+            25%
+        </label>
 
-    <label>
-        <input
-        type="radio"
-        name="sugar"
-        value="25%">
-        25%
-    </label>
+        <label>
+            <input type="radio" name="sugar" value="50%" checked>
+            50%
+        </label>
 
-    <label>
-        <input
-        type="radio"
-        name="sugar"
-        value="50%"
-        checked>
-        50%
-    </label>
+        <label>
+            <input type="radio" name="sugar" value="75%">
+            75%
+        </label>
 
-    <label>
-        <input
-        type="radio"
-        name="sugar"
-        value="75%">
-        75%
-    </label>
-
-    <label>
-        <input
-        type="radio"
-        name="sugar"
-        value="100%">
-        100%
-    </label>
-
+        <label>
+            <input type="radio" name="sugar" value="100%">
+            100%
+        </label>
     `;
 
 }
-else{
+else if(
+    product.category !== "fries"
+){
 
     extraSection.innerHTML = `
+        <h3>Extra Ingredients</h3>
 
-    <h3>Extra Ingredients</h3>
+        <label>
+            <input
+            type="checkbox"
+            class="extra"
+            value="2">
+            Extra Cheese (+$2)
+        </label>
 
-    <label>
-        <input
-        type="checkbox"
-        class="extra"
-        value="2">
-        Extra Cheese (+$2)
-    </label>
+        <label>
+            <input
+            type="checkbox"
+            class="extra"
+            value="3">
+            Bacon (+$3)
+        </label>
 
-    <label>
-        <input
-        type="checkbox"
-        class="extra"
-        value="3">
-        Bacon (+$3)
-    </label>
-
-    <label>
-        <input
-        type="checkbox"
-        class="extra"
-        value="1">
-        Mushroom (+$1)
-    </label>
-
+        <label>
+            <input
+            type="checkbox"
+            class="extra"
+            value="1">
+            Mushroom (+$1)
+        </label>
     `;
-
 }
 function calculateTotal(){
 
