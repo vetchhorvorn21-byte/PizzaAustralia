@@ -6,20 +6,22 @@ JSON.parse(
 const cartItem =
 document.getElementById("cartItem");
 
+function continueShopping(){
+    window.location.href = "../index.html#menu";
+}
+
 if(cart.length === 0){
 
     cartItem.innerHTML = `
+        <div class="empty-cart">
+            <h2>🛒 Your Cart Is Empty</h2>
+            <p>Add delicious food from our menu</p>
 
-    <div class="cart-card">
-
-        <h2 style="text-align:center;">
-            Your Cart Is Empty 🍕
-        </h2>
-
-    </div>
-
+            <button onclick="continueShopping()">
+                🍕 Continue Shopping
+            </button>
+        </div>
     `;
-
 }
 else{
 
@@ -105,6 +107,7 @@ else{
 
 function removeItem(index){
 
+    console.log(index);
     let cart =
     JSON.parse(
         localStorage.getItem("cart")
