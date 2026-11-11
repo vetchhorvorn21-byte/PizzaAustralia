@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Australia Restaurant</title>
+  <style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:white;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes pulse{
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+}
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0px 6%;
+  background:#df2929;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width: 100%;
+  min-height: 85px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0,0.10);
+}
+
+.logo{
+  color:white;
+  font-size:28px;
+  font-weight:800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo span{
+  font-size: 32px;
+  transition: transform 0.3s ease;
+}
+.logo:hover span{
+  transform: rotate(-12deg) scale(1.1);
+}
+
+.nav-links{
+  display:flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap:12px;
+  list-style:none;
+}
+.nav-links li{
+  position: relative;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 17px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.nav-links a:hover{
+  background: rgba(255,255,255,0.12);
+}
+.nav-links a:not(.order-btn)::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 50%;
+  bottom: 4px;
+  background: #ffd54f;
+  border-radius: 10px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+.nav-links a:not(.order-btn):hover::after,
+.nav-links a.active:not(.order-btn)::after {
+width: 45%;
+}
+.nav-links .order-btn {
+  background: white;
+  color: #df2929;
+  padding: 12px 22px;
+  margin: 0 5px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+.nav-links .order-btn:hover {
+  color: #222;
+  background: #ffd54f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.17);
+}
+.nav-links a:active {
+  transform: scale(0.95);
+}
+.contact-btn{
+  background:#ffd60a;
+  color:#222 !important;
+  padding:10px 15px;
+  border-radius:25px;
+}
+
+/* Hero */
+
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+  padding:80px;
+}
+
+.hero-text{
+  flex:1;
+  animation:fadeUp 1s ease;
+  font-size: 22px;
+}
+
+.hero-text h1{
+  font-size:55px;
+  color:#d62828;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+.hero-image{
+  flex:1;
+}
+
+.hero-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+.btn{
+  display:inline-block;
+  background:#f77f00;
+  padding:15px 30px;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  animation:pulse 2s infinite;
+}
+
+/* Menu */
+
+.menu{
+
+    padding:90px 6%;
+
+    background:
+    linear-gradient(
+    180deg,
+    #fffaf4 0%,
+    #fff3ed 100%
+    );
+
+}
+.menu-header{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+}
+.menu-badge{
+
+    background:#fff0e6;
+
+    color:#df2929;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+}
+.menu-header h2{
+
+    font-size:48px;
+
+    color:#202020;
+
+    margin-bottom:15px;
+
+}
+.menu-header p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    font-size:18px;
+
+}
+.menu h2{
+  color:#d62828;
+  margin-bottom:20px;
+}
+.filter-buttons button:hover{
+
+    background:#df2929;
+
+    color:white;
+
+}
+.filter-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:50px;
+
+}
+
+.filter-buttons button{
+
+    background:white;
+
+    color:#df2929;
+
+    border:2px solid #df2929;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.filter-buttons button.active{
+
+    background:#f77f00;
+
+    border-color:#f77f00;
+
+    color:white;
+
+}
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  align-items: stretch;
+}
+
+.card{
+  width: 355px;
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+  flex-direction: column;
+  display: flex;
+
+}
+
+.card:hover{
+  transform:translateY(-8px) ;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.card img{
+  width:100%;
+  height:325px;
+  object-fit:cover;
+  display: block;
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 20px 25px;
+  text-align: center;
+}
+
+.card h3{
+  margin:15px 0;
+  font-size: 24px;
+  color: #111;
+  margin: 0 0 15px;
+}
+.description{
+  color:#333 !important;
+  font-size: 17px;
+  font-weight: normal !important;
+  line-height: 1.5;
+  margin: 0 auto 18px !important;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.price{
+  color:#d62828 !important ;
+  font-size: 20px;
+  font-weight: bold !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+}
+
+.card p{
+  margin-bottom:20px;
+  color:#d62828;
+  font-weight:bold;
+}
+/* =========================
+   WELCOME / HERO SECTION
+========================= */
+
+.welcome-section {
+    position: relative;
+    min-height: 730px;
+    display: flex;
+    align-items: center;
+    padding: 70px 6%;
+    overflow: hidden;
+    background:
+    radial-gradient(circle at 8% 25%, #fff0d8 0, transparent 28%),
+    radial-gradient(circle at 95% 20%, #f8d8d4 0, transparent 22%),
+    #fffaf4;
+}
+
+
+/* Main layout */
+.welcome-content {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.welcome-text {
+    max-width: 680px;
+}
+
+
+/* Small badge */
+.welcome-badge {
+    display: inline-block;
+    background: #fff0e6;
+    color: #df2929;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 1px solid #ffd5c2;
+}
+
+
+/* Main heading */
+.welcome-text h1 {
+    margin: 0 0 24px;
+    color: #202020;
+    font-size: clamp(45px, 5vw, 72px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+
+/* Red second line */
+.welcome-text h1 span {
+    display: block;
+    color: #df2929;
+}
+
+
+/* Description */
+.welcome-text p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   FOOD FEATURES
+========================= */
+
+.food-features {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s ease;
+}
+
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(223, 41, 41, 0.12);
+}
+
+
+.feature > span {
+    font-size: 28px;
+}
+
+
+.feature h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #222;
+}
+
+
+.feature small {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.welcome-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.btn-menu,
+.btn-order {
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+
+/* Red button */
+.btn-menu {
+    background: #df2929;
+    color: white;
+    box-shadow: 0 8px 20px rgba(223, 41, 41, 0.25);
+}
+
+
+.btn-menu span {
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+
+.btn-menu:hover {
+    background: #bd1e1e;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(223, 41, 41, 0.35);
+}
+
+
+.btn-menu:hover span {
+    margin-left: 13px;
+}
+
+
+/* White button */
+.btn-order {
+    color: #df2929;
+    background: white;
+    border: 2px solid #df2929;
+}
+
+
+.btn-order:hover {
+    background: #df2929;
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   RIGHT IMAGE
+========================= */
+
+.welcome-image {
+    position: relative;
+}
+
+
+.welcome-image img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    display: block;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+.welcome-image:hover img {
+    transform: scale(1.015);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.23);
+}
+
+
+/* Decorative red shape */
+.welcome-image::before {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: #df2929;
+
+    border-radius: 50%;
+
+    right: -45px;
+    top: -45px;
+
+    z-index: 0;
+
+    opacity: 0.12;
+}
+
+
+.welcome-image img {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Floating badge */
+.image-badge {
+    position: absolute;
+    z-index: 2;
+
+    left: -35px;
+    bottom: 35px;
+
+    background: white;
+
+    padding: 14px 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.image-badge > span {
+    font-size: 28px;
+}
+
+
+.image-badge strong {
+    display: block;
+    color: #222;
+    font-size: 14px;
+}
+
+
+.image-badge small {
+    color: #777;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.welcome-text {
+    animation: slideFromLeft 0.8s ease;
+}
+
+
+.welcome-image {
+    animation: slideFromRight 0.8s ease;
+}
+
+
+@keyframes slideFromLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideFromRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .welcome-section {
+        padding: 50px 5%;
+    }
+
+    .welcome-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .welcome-text {
+        max-width: 800px;
+    }
+
+    .welcome-text h1 {
+        font-size: 55px;
+    }
+
+    .welcome-image img {
+        height: 500px;
+    }
+
+    .image-badge {
+        left: 20px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome-section {
+        padding: 38px 6% 35px;
+        min-height: calc(100vh - 100px);
+        background: 
+          radial-gradient(circle at 8% 25%, #fff0d8 0, transparent 28%),
+          radial-gradient(circle at 95% 20%,) #f8d8d4 0, transparent 22%,
+          #fffaf4;
+        overflow: hidden;
+  
+    }
+
+    .welcome-content {
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      align-items: center;  
+      gap: 65px;
+    }
+
+    .welcome-badge {
+        font-size: 12px;
+        display: inline-block;
+        margin-bottom: 28px;
+        padding: 9px 20px;
+        background: #fff7f2;
+        color: #df2929;
+        border: 1px solid #ffc8b7;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .welcome-text h1 {
+        margin: 0 0 25px;
+        color: #1d1d1d;
+        font-size: clamp(50px, 5vw, 72px);
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -2px;
+    }
+    .welcome-text h1 span {
+    display: block;
+    color: #e52a2a;
+    margin-top: 5px;
+    }
+    .welcome-text p {
+        max-width: 700px;
+        margin: 0 0 16px;
+        color: #4d4d4d;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .food-features {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    .feature {
+      min-width: 175px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 17px;
+      background: #ffffff;
+      border-radius: 13px;
+      box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow:
+      0 12px 30px rgba(223, 41, 41, 0.12);
+    }
+    .welcome-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-menu,
+    .btn-order {
+        text-align: center;
+    }
+
+    .welcome-image img {
+        height: 370px;
+        border-radius: 20px;
+    }
+
+    .image-badge {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* Order */
+
+
+
+.order h2{
+  color:#d62828;
+  margin-bottom:20px;
+}
+
+
+
+#orderForm input,
+#orderForm select{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+#orderForm button{
+  padding:15px;
+  background:#d62828;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+/* About */
+.about{
+  padding:80px;
+  text-align:center;
+  background:#ffe5d9;
+}
+
+/* Contact */
+
+.contact{
+  padding:80px;
+  text-align:center;
+}
+
+/* Footer */
+
+footer{
+  background:#d62828;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+.card-order-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #df2929;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.card-order-btn:hover {
+    background: #b91f1f;
+    transform: translateY(-2px);
+}
+
+
+
+.card-order-btn:active{
+    transform:scale(0.97);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .welcome-section {
+        padding: 35px 20px;
+        min-height: auto;
+    }
+
+    .welcome-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .welcome-text h1 {
+        font-size: 42px;
+        line-height: 1.08;
+        letter-spacing: -1px;
+    }
+
+    .welcome-text p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .food-features {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .feature {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .welcome-image img {
+        height: 370px;
+        border-radius: 20px;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">🍕 Pizza Australia</div>
+      <ul class="nav-links">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+        <li>
+          <a href="#menu">Menu</a>
+        </li>
+        <li>
+          <a href="#about">About US</a>
+        </li>
+      </ul>
+</nav>
+
+<section class="welcome-section" id="home">
+
+    <div class="welcome-content">
+
+        <div class="welcome-text">
+
+            <span class="welcome-badge">🍕 Fresh • Delicious • Made With Love</span>
+
+            <h1>
+                Delicious Food & Drinks
+                <span>For Everyone</span>
+            </h1>
+
+            <p>
+                Welcome to <strong>Pizza Australia</strong>, where great food
+                brings everyone together. Enjoy our delicious pizzas, juicy
+                burgers, freshly prepared sandwiches, and refreshing drinks,
+                all made to give you a satisfying and enjoyable meal.
+            </p>
+
+            <p>
+                Whether you are looking for a quick bite, a tasty lunch,
+                or a meal to share with friends and family, we have
+                something delicious for everyone.
+            </p>
+
+            <!-- Small features -->
+            <div class="food-features">
+
+                <div class="feature">
+                    <span>🍕</span>
+                    <div>
+                        <h4>Fresh Food</h4>
+                        <small>Made every day</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span>🚚</span>
+                    <div>
+                        <h4>Fast Delivery</h4>
+                        <small>Hot & fresh</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span>⭐</span>
+                    <div>
+                        <h4>Great Taste</h4>
+                        <small>Customer favorite</small>
+                    </div>
+                </div>
+
+            </div>
+
+            
+        </div>
+
+
+        <!-- Restaurant image -->
+        <div class="welcome-image">
+
+            <img src="images/1.jpg">
+
+
+        </div>
+
+    </div>
+
+</section>
+
+  <!-- Menu -->
+  <section class="menu" id="menu">
+
+    <div class="menu-header">
+
+    <span class="menu-badge">
+        🍴 Our Menu
+    </span>
+
+    <h2>
+        Discover Your
+        Favorite Foods
+    </h2>
+
+    <p>
+        Fresh pizzas, juicy burgers,
+        tasty sandwiches and refreshing drinks.
+    </p>
+
+</div>
+
+    <div class="filter-buttons">
+      <button class="active" onclick="filterMenu('all',this)">All</button>
+      <button onclick="filterMenu('pizza',this)">Pizza</button>
+      <button onclick="filterMenu('burger',this)">Burger</button>
+      <button onclick="filterMenu('sandwich',this)">Sandwich</button>
+      <button onclick="filterMenu('drink',this)">Beverages</button>
+    </div>
+
+    <div class="cards">
+
+      <div class="card pizza">
+        <img src="images/peperroni.png">
+        <div class="card-content">
+          <h3>Pepperoni Pizza</h3>
+          <p class="description">
+          Classic pizza topped with mozzarella cheese,
+          pepperoni and tomato sauce.
+          </p>
+          <p class="price">$11.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(1)">Order Food
+          </button>
+        </div>
+      </div>
+
+      <div class="card pizza">
+        <img src="images/chees p.png">
+        <div class="card-content">
+          <h3>Cheese Pizza</h3>
+          <p class="description">
+            A classic pizza with rich tomato sauce and delicious melted cheese.</p>
+          <p class="price">$10.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(2)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card pizza">
+        <img src="images/vegan.png">
+        <div class="card-content">
+          <h3>vegetables Pizza</h3>
+          <p class="description">
+            A tasty pizza topped with fresh vegetables, melted cheese, and flavorful tomato sauce.
+          </p>
+          <p class="price">$10.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(3)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card burger">
+        <img src="images/chees bu.jpg">
+        <div class="card-content">
+          <h3>Cheese Burger</h3>
+          <p class="description">
+            A cheeseburger is a juicy beef burger topped with melted cheese, fresh vegetables, and tasty sauce in a soft bun.
+          </p>
+          <p class="price">$8.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(4)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card burger">
+        <img src="images/beef bur.jpg">
+        <div class="card-content">
+          <h3>Beef Burger</h3>
+          <p class="description">
+            Juicy beef patty with fresh lettuce, tomato, cheese, and tasty burger sauce in a soft toasted bun. 
+          </p>
+          <p class="price">$8.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(5)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card burger">
+        <img src="images/chicken bur.jpg">
+        <div class="card-content">
+          <h3>Chicken Burger</h3>
+          <p class="description">
+            A crispy chicken patty with fresh lettuce, tomato, cheese, and flavorful sauce in a soft bun.
+          </p>
+          <p class="price">$8.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(6)">Order Food
+          </button>
+        </div>
+      </div>
+
+      <div class="card burger">
+        <img src="images/small.jpg">
+        <div class="card-content">
+          <h3>Small Burger</h3>
+          <p class="description">
+          A delicious mini burger with juicy beef, fresh veggies, cheese, and special sauce.
+          </p>
+          <p class="price">$7.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(7)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card sandwich">
+        <img src="images/cheese sand.jpg">
+        <div class="card-content">
+          <h3>Cheese Sandwich</h3>
+          <p class="description">
+            A tasty sandwich filled with melted cheese, fresh vegetables, and creamy sauce between crispy toasted bread.
+          </p>
+          <p class="price">$6.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(9)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card sandwich">
+        <img src="images/spicy.jpg">
+        <div class="card-content">
+          <h3>Spicy Chicken</h3>
+          <p class="description">
+            Crispy chicken with a spicy, flavorful coating, served hot and delicious
+          </p>
+          <p class="price">$8.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(12)">Order Food
+          </button>
+        </div>
+      </div>
+
+      <div class="card sandwich">
+        <img src="images/ham sand.jpg">
+        <div class="card-content">
+          <h3>Ham Sandwich</h3>
+          <p class="description">
+            A delicious sandwich filled with sliced ham, melted cheese, fresh vegetables, and creamy sauce on toasted bread
+          </p>
+          <p class="price">$5.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(8)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card sandwich">
+        <img src="images/borito.jpg">
+        <div class="card-content">
+          <h3>Burrito</h3>
+          <p class="description">
+            A tasty tortilla filled with seasoned meat, rice, vegetables, cheese, and flavorful sauce.
+          </p>
+          <p class="price">$4.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(11)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card sandwich">
+        <img src="images/spa.jpg">
+        <div class="card-content">
+          <h3>Spaghetti</h3>
+          <p class="description">
+            A tasty pasta dish served with rich tomato sauce, herbs, and cheese.
+          </p>
+          <p class="price">$5.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(10)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card drink">
+        <img src="images/ice coffee.jpg" >
+        <div class="card-content">
+          <h3>Iced Coffee</h3>
+          <p class="description">
+            Refreshing iced coffee with rich coffee flavor, creamy milk, and ice for a cool and delicious drink.
+          </p>
+          <p class="price">$3.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(15)">Order Food
+          </button>
+        </div>
+      </div>
+
+      <div class="card drink">
+        <img src="images/orange.jpg">
+        <div class="card-content">
+          <h3>Orange Juice</h3>
+          <p class="description">
+            Refreshing orange juice with a sweet citrus flavor, served chilled for a fresh and delicious drink.
+          </p>
+          <p class="price">$4.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(14)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card drink">
+        <img src="images/Macha.jpg">
+        <div class="card-content">
+          <h3>Matcha Latte</h3>
+          <p class="description">
+            A smooth and refreshing green tea drink made with finely ground matcha powder and creamy milk.</p> 
+          <p class="price">$3.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(16)">Order Food
+          </button>
+        </div>
+      </div>
+      <div class="card drink">
+        <img src="images/coca.jpg">
+        <div class="card-content">
+          <h3>Coca-Cola</h3>
+          <p class="description">
+            A cold and refreshing Coca-Cola with a sweet, fizzy taste, perfect with any meal.
+          </p>
+          <p class="price">$1.99</p>
+          <button class="card-order-btn"
+            onclick="orderFood(13)">Order Food
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+
+    <p>
+      Pizza Australia Restaurant offers delicious food,
+      fresh beverages and excellent service in a comfortable
+      environment for families and friends.
+    </p>
+  </section>
+
+  <!-- Contact -->
+
+  <section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>📍 Phnom Penh, Cambodia</p>
+    <p>📞 +855 12 345 678</p>
+    <p>📧 pizzaaustralia@gmail.com</p>
+    <p>Open at 9:00Am Close at 9:00Pm</p>
+    
+
+  </section>
+
+  <footer>
+    <p>© 2026 Pizza Australia Restaurant | All Rights Reserved</p>
+  </footer>
+
+<script>
+function filterMenu(category, button){
+
+    const cards =
+    document.querySelectorAll(".card");
+
+    const buttons =
+    document.querySelectorAll(
+        ".filter-buttons button"
+    );
+
+    buttons.forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    cards.forEach(card=>{
+
+        if(category === "all"){
+            card.style.display = "block";
+        }
+        else if(card.classList.contains(category)){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+
+    });
+}
+function orderFood(id){
+
+    localStorage.setItem("productId", id);
+
+    window.location.href =
+    "pages/food-detail.html";
+}
+</script>
+</body>
+</html>

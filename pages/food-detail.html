@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Detail</title>
+
+    <link rel="stylesheet" href="../css/food-detail.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>🍕 Pizza Australia</h2>
+</nav>
+
+<div class="container">
+
+    <div class="food-image">
+        <img id="foodImage" src="">
+    </div>
+
+    <div class="food-info">
+
+        <h1 id="foodName"></h1>
+        <div class="rating">
+
+        ⭐⭐⭐⭐⭐
+
+        <span>4.9 Rating</span>
+        <p class="food-description">
+Freshly prepared with premium ingredients,
+rich flavor, and baked to perfection.
+</p>
+
+        </div>
+
+        <h2 id="foodPrice"></h2>
+
+        <div id="sizeSection"></div>
+
+        <div id="extraSection"></div>
+
+        <div class="qty-box">
+
+            <button id="minusBtn">-</button>
+
+            <span id="qty">1</span>
+
+            <button id="plusBtn">+</button>
+
+        </div>
+
+        <div class="total-box">
+
+        <h2>
+            Total:
+            <span id="totalPrice"></span>
+        </h2>
+
+    </div>
+
+    <button id="addCartBtn">
+        Add To Cart
+    </button>
+
+    </div>
+
+</div>
+
+<script src="../data/product.js"></script>
+<script src="../js/food-detail.js"></script>
+
+</body>
+</html>

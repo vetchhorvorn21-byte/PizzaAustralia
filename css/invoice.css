@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(
+    135deg,
+    #fff6f2,
+    #ffe9e1
+    );
+
+    padding:40px 20px;
+}
+.invoice{
+
+    max-width:500px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:16px;
+    text-align:center;
+
+}
+#invoiceDate,
+#invoiceTime{
+
+    font-size:15px;
+
+    color:#555;
+
+}
+
+#invoiceData{
+
+    margin-top:25px;
+
+}
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+#finishBtn{
+
+    width:180px;
+
+    height:45px;
+
+    margin:20px auto 0;
+
+    display:block;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #df2929,
+    #ff6b35
+    );
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.invoice-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+.grand-total{
+
+    background:#fff4f1;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-top:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-weight:bold;
+
+    color:#df2929;
+
+}
+
+hr{
+
+    margin:20px 0;
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+}
+.customer-box{
+
+    background:#fff4f1;
+
+    border-left:4px solid #df2929;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+}
+.customer-box p{
+
+    margin:8px 0;
+
+    font-size:16px;
+
+}
+.payment-method{
+
+    background:#f7f7f7;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-top:15px;
+
+}
+.receipt-header{
+
+    background:linear-gradient(
+    135deg,
+    #df2929,
+    #ff6b35
+    );
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+.receipt-header h1{
+
+    font-size:18px;
+
+    margin-bottom:4px;
+
+    color:white;
+
+}
+
+.receipt-header p{
+
+    font-size:14px;
+
+    margin:0;
+
+    color:white;
+
+}
+.order-title{
+
+    color:#df2929;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin:15px 0 10px;
+
+}
+

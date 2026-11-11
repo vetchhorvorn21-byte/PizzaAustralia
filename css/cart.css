@@ -1,0 +1,191 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fffaf4;
+}
+
+.navbar{
+    background:#df2929;
+    color:white;
+    padding:15px 30px;
+}
+.navbar h2{
+    font-size:20px;
+}
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.grand-total{
+
+    background:white;
+
+    padding:15px 30px;
+
+    border-radius:15px;
+
+    margin:20px 0;
+
+    border-left:5px solid #df2929;
+
+}
+
+.cart-footer{
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+}
+.cart-footer h3{
+
+    font-size:28px;
+
+    color:#df2929;
+
+    margin-bottom:20px;
+
+}
+.action-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+.action-buttons button{
+
+    flex:1;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+.action-buttons button:first-child{
+
+    background:#f77f00;
+
+    color:white;
+
+}
+.action-buttons button:last-child{
+
+    background:#df2929;
+
+    color:white;
+
+}
+.cart-card{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+.cart-card img{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+.cart-info{
+    flex:1;
+}
+
+.cart-desc{
+    color:#777;
+    font-size:14px;
+    line-height:1.6;
+    margin-top:8px;
+}
+#checkoutBtn{
+    background:#df2929;
+    color:white;
+}
+.cart-info button{
+    background:#df2929;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.cart-info button:hover{
+    background:#b91f1f;
+}
+.cart-info h2{
+
+    margin-bottom:10px;
+
+    color:#222;
+
+    font-size:26px;
+
+}
+.cart-info p{
+
+    margin:8px 0;
+
+    font-size:18px;
+
+    color:#555;
+
+}
+.cart-actions{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.cart-actions button{
+    flex:1;
+    height:55px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#orderMoreBtn{
+    background:#f77f00;
+    color:white;
+}
+#orderMoreBtn:hover{
+    background:#d96e00;
+}
+

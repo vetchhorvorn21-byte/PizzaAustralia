@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff6f2,
+    #ffe9e1
+    );
+
+}
+
+.success-card{
+
+    width:500px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.icon{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.success-card h1{
+
+    color:#df2929;
+
+    margin-bottom:10px;
+
+}
+
+.success-text{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.delivery-box{
+
+    background:#fff4f1;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+}
+
+.delivery-box h3{
+
+    color:#df2929;
+
+    margin-bottom:8px;
+
+}
+
+.thank-you{
+
+    color:#444;
+
+    margin-bottom:25px;
+
+}
+
+.home-btn{
+
+    display:inline-block;
+
+    background:
+    linear-gradient(
+    135deg,
+    #df2929,
+    #ff6b35
+    );
+
+    color:white;
+
+    padding:12px 28px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}

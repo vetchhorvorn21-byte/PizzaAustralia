@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>💳 Checkout</h2>
+</nav>
+
+<div class="container">
+
+    <h1>Complete Your Order</h1>
+    <p class="checkout-text">
+    Please provide your delivery information and
+    confirm your order details below.
+    </p>
+    <input
+        type="text"
+        id="customerName"
+        placeholder="Full Name"
+    >
+
+    <input
+        type="text"
+        id="phone"
+        placeholder="Phone Number"
+    >
+
+    <textarea
+        id="address"
+        placeholder="Delivery Address"
+    ></textarea>
+
+    <select id="paymentMethod">
+        <option>Cash On Delivery</option>
+        <option>ABA KHQR</option>
+    </select>
+
+    <div class="summary-box">
+
+        <h3>🧾 Order Summary</h3>
+
+        <div id="summaryData"></div>
+
+    </div>
+
+    <button id="placeOrderBtn">
+        Place Order
+    </button>
+
+</div>
+
+<script src="../js/checkout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff6f2,
+        #ffe9e1
+    );
+
+}
+.payment-card{
+
+    width:450px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+.amount-box{
+
+    background:#fff4f1;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin:20px 0;
+
+}
+.amount-box h2{
+
+    color:#df2929;
+
+}
+.qr-image{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:contain;
+
+    margin:20px auto;
+
+    display:block;
+
+}
+#successBtn{
+
+    width:220px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #df2929,
+        #ff6b35
+    );
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+.container{
+    max-width:600px;
+    margin:auto;
+    text-align:center;
+    padding:50px;
+}
+button{
+    width:100%;
+    padding:15px;
+    background:#df2929;
+    border:none;
+    color:white;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
