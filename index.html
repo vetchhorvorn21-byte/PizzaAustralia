@@ -1089,8 +1089,8 @@ footer{
       <button onclick="filterMenu('burger',this)">Burger</button>
       <button onclick="filterMenu('sandwich',this)">Sandwich</button>
       <button onclick="filterMenu('drink',this)">Beverages</button>
+      <button onclick="filterMenu('fries',this)">Fries</button>
     </div>
-
     <div class="cards">
 
       <div class="card pizza">
@@ -1199,7 +1199,22 @@ footer{
           </button>
         </div>
       </div>
-      <div class="card sandwich">
+      <div class="card fries">
+        <img src="images/fre.jpg">
+        <div class="card-content">
+            <h3>French Fries</h3>
+            <p class="description">
+                Crispy golden french fries served hot and delicious.
+            </p>
+            <p class="price">$3.99</p>
+            <button
+                class="card-order-btn"
+                onclick="orderFood(17)">
+                Order Food
+            </button>
+        </div>
+    </div>
+      <div class="card fries">
         <img src="images/spicy.jpg">
         <div class="card-content">
           <h3>Spicy Chicken</h3>
