@@ -79,7 +79,7 @@ const products = [
 {
     id:12,
     name:"Spicy Chicken",
-    category:"chicken",
+    category:"fries",
     image:"spicy.jpg",
     price:8.99
 },
@@ -109,6 +109,13 @@ const products = [
     name:"Matcha Latte",
     category:"drink",
     image:"Macha.jpg",
+    price:3.99
+},
+{
+    id:17,
+    name:"French Fries",
+    category:"fries",
+    image:"fre.jpg",
     price:3.99
 }
 ];
